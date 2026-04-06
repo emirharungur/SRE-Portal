@@ -67,11 +67,11 @@ const CreateRequest = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <div>
               <label style={labelStyle}>Talep Sahibi</label>
-              <input required name="user" value={formData.user} onChange={handleChange} style={{...inputStyle, backgroundColor: '#f1f5f9'}} readOnly title="Oturumunuzdan otomatik alındı" />
+              <input required name="user" value={formData.user} onChange={handleChange} style={{...inputStyle, backgroundColor: 'var(--color-background)', color: 'var(--color-text-primary)'}} readOnly title="Oturumunuzdan otomatik alındı" />
             </div>
             <div>
               <label style={labelStyle}>Departman</label>
-              <input required name="department" value={formData.department} onChange={handleChange} style={{...inputStyle, backgroundColor: '#f1f5f9'}} readOnly title="Oturumunuzdan otomatik alındı" />
+              <input required name="department" value={formData.department} onChange={handleChange} style={{...inputStyle, backgroundColor: 'var(--color-background)', color: 'var(--color-text-primary)'}} readOnly title="Oturumunuzdan otomatik alındı" />
             </div>
           </div>
 

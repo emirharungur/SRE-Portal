@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { Home, FileText, Activity, PlusCircle, LogOut, User } from 'lucide-react';
+import { Home, FileText, Activity, PlusCircle, LogOut, User, Moon, Sun } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import './Sidebar.css';
 
 const Sidebar = () => {
   const { currentUser, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="sidebar">
@@ -45,6 +47,15 @@ const Sidebar = () => {
              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>{currentUser?.department}</div>
            </div>
          </div>
+
+         <button 
+           onClick={toggleTheme}
+           className="nav-item" 
+           style={{ width: '100%', background: 'none', border: '1px solid var(--color-border)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-background)', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+            <span style={{ marginLeft: '0.5rem', fontWeight: 500 }}>{theme === 'dark' ? 'Açık Tema' : 'Koyu Tema'}</span>
+         </button>
+
          <button 
            onClick={logout}
            className="nav-item" 
